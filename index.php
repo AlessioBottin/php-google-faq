@@ -147,7 +147,22 @@
     </div>
 
     <!-- Footer -->
-    
+    <footer>
+        <div class="container">
+            <div class="flex-container">
+                <div class="copyright">
+                    Google - Tutto su Google - Privacy - Termini
+                </div>
+
+                <div class="language">
+                    <span><i class="fas fa-comment"></i></span>
+                    <select id="language">
+                        <option value="italian">Italiano</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </footer>
     
 </body>
 </html>
