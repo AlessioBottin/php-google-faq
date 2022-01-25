@@ -3,3 +3,17 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+/* Header  */
+header {
+    padding: 0 30px;
+}
+.top {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* FAQ  */
+.answer {
+    margin-bottom: 40px;
+}
