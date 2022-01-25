@@ -50,6 +50,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -57,12 +58,16 @@
 
     <!-- Header -->
     <header>
+
+        <!-- Top  -->
         <div class="top">
+            <!-- Logo  -->
             <div class="left">
                 <span><img src="https://www.gstatic.com/images/branding/googlelogo/svg/googlelogo_clr_74x24px.svg" alt="google logo"></span>
-                <span>Privacy e termini</span>
+                <span class="title">Privacy e termini</span>
             </div>
 
+            <!-- Account  -->
             <div class="left">
                 <span class="apps">
                     <i class="fas fa-ellipsis-v"></i>
@@ -73,44 +78,58 @@
             </div>
         </div>
 
-        <div class="bottom"></div>
+        <!-- Bottom  -->
+        <div class="bottom">
+            <ul class="menu">
+                <li>Introduzione</li>
+                <li>Norme sulla privacy</li>
+                <li>Termini di servizio</li>
+                <li>Tecnologie</li>
+                <li class="active">Domande frequenti</li>
+            </ul>
+        </div>
     </header>
 
+    <div class="content">
+        <div class="container">
 
-    <?php foreach ($faq as $single_faq) { ?>
-        <!-- Question  -->
-        <h2><?php echo $single_faq['question'] ?></h2>
+            <?php foreach ($faq as $single_faq) { ?>
+                <!-- Question  -->
+                <h2 class="question"><?php echo $single_faq['question'] ?></h2>
 
-        <!-- Answer  -->
-        <div class="answer">
+                <!-- Answer  -->
+                <div class="answer">
 
-            <!-- Per ogni risposta -->
-            <?php foreach ($single_faq['answer'] as $single_answer) { ?>
-                <!-- Se la risposta non contiene liste -->
-                <?php if (!is_array($single_answer)) { ?>
-                    <p class="answer"><?php echo $single_answer; ?></p>
-                <!-- Altrimenti stampa una ol con le sotto-risposte -->
-                <?php } else { ?>
-                    <ol class="answer single-answers">
-                        <!-- Per ogni sotto-risposta  -->
-                        <?php foreach ($single_answer as $sub_answer) { ?>
-                            <!-- Se la sotto-risposta non contiene liste --> 
-                            <?php if (!is_array($sub_answer)) { ?>
-                                <li><?php echo $sub_answer; ?></li>
-                            <?php } else { ?>
-                                <ul class="answer sub-answers">
-                                    <!-- Per ogni sotto-risposta  -->
-                                    <?php foreach ($sub_answer as $single_sub_answer) { ?>
-                                        <li><?php echo $single_sub_answer; ?></li>
+                    <!-- Per ogni risposta -->
+                    <?php foreach ($single_faq['answer'] as $single_answer) { ?>
+                        <!-- Se la risposta non contiene liste -->
+                        <?php if (!is_array($single_answer)) { ?>
+                            <p class="answer"><?php echo $single_answer; ?></p>
+                        <!-- Altrimenti stampa una ol con le sotto-risposte -->
+                        <?php } else { ?>
+                            <ol class="answer single-answers">
+                                <!-- Per ogni sotto-risposta  -->
+                                <?php foreach ($single_answer as $sub_answer) { ?>
+                                    <!-- Se la sotto-risposta non contiene liste --> 
+                                    <?php if (!is_array($sub_answer)) { ?>
+                                        <li><?php echo $sub_answer; ?></li>
+                                    <?php } else { ?>
+                                        <ol class="answer sub-answers">
+                                            <!-- Per ogni sotto-risposta  -->
+                                            <?php foreach ($sub_answer as $single_sub_answer) { ?>
+                                                <li><?php echo $single_sub_answer; ?></li>
+                                            <?php } ?>
+                                        </ol>
                                     <?php } ?>
-                                </ul>
-                            <?php } ?>
+                                <?php } ?>
+                            </ol>
                         <?php } ?>
-                    </ol>
-                <?php } ?>
-            <?php }  ?>
-        </div>
+                    <?php }  ?>
+                </div>
+            <?php } ?> 
 
-    <?php } ?>    
+        </div>
+    </div>
+    
 </body>
 </html>

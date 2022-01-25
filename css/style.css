@@ -4,16 +4,100 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    width: 52%;
+    margin: auto;
+}
+
 /* Header  */
 header {
     padding: 0 30px;
+    border-bottom: 1px solid lightgray;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: white;
 }
+
+/* Top  */
 .top {
     display: flex;
     justify-content: space-between;
+    padding-top: 20px;
 }
 
+.apps, .title {
+    margin: 0 10px;
+}
+
+/* Left  */
+.left {
+    display: flex;
+    align-items: center;
+}
+
+.app i{
+    margin: 0 -5px;
+}
+
+.account {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: purple;
+    text-transform: uppercase;
+    color: white;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Bottom  */
+.menu {
+    display: flex;
+    color: gray;
+    font-weight: bold;
+}
+.menu li {
+    margin-right: 20px;
+    line-height: 50px;
+    font-size: 14px;
+}
+
+.active {
+    color: blue;
+    border-bottom: 3px solid blue;
+    
+}
+
+
 /* FAQ  */
+
+.content {
+    margin-top: 250px;
+}
+
+.question {
+    color:rgb(61, 61, 61);
+    margin-bottom: 20px;
+    margin-top: 80px;
+}
 .answer {
     margin-bottom: 40px;
+    font-size: 14px;
+    line-height: 20px;
 }
